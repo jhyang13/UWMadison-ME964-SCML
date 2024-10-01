@@ -15,3 +15,7 @@ Name: Jiahui Yang, Mechanical Engineering
 Email: jyang753@wisc.edu
 
 ### Assignment HW1
+- Problem 1
+- Problem 2
+- Problem 3
+- Problem 4-1
