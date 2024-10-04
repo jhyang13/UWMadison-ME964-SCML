@@ -18,8 +18,8 @@ Email: jyang753@wisc.edu
 - Problem 1
 - Problem 2
 - Problem 3
-- Problem 4-1 Learning rate
-- Problem 4-2 Batch size
+- Problem 4-1 Learning Rate
+- Problem 4-2 Batch Size
 - Problem 4-2 Epoch
 - Problem 4-3 Activation Function
 - Problem 4-4 Network Architecture
