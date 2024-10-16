@@ -24,6 +24,16 @@ Email: jyang753@wisc.edu
 - Problem 4-3 Activation Function
 - Problem 4-4 Network Architecture
 
+### Midterm Project 1
+- Problem 1-v1
+- Problem 1-v2
+- Problem 2-1
+- Problem 2-2
+- Problem 2-3
+- Problem 2-4
+- Problem 2-5
+- Problem 2-6
+
 
 
 
