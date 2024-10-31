@@ -34,6 +34,13 @@ Email: jyang753@wisc.edu
 - Problem 2-5
 - Problem 2-6
 
+### Assignment HW2
+- Problem 1
+- Problem 2-1
+- Problem 2-2
+- Problem 2-3
+- Problem 2-4
+
 
 
 
