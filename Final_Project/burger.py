@@ -10,6 +10,7 @@ from deepxde.backend import tf
 # Import torch if using backend pytorch
 # import torch
 
+
 #load the data in the package
 def gen_testdata():
     data = np.load("dataset/Burgers.npz")
@@ -18,6 +19,7 @@ def gen_testdata():
     X = np.vstack((np.ravel(xx), np.ravel(tt))).T
     y = exact.flatten()[:, None]
     return X, y
+
 
 #define the PDE
 def pde(x, y):
@@ -29,12 +31,14 @@ def pde(x, y):
     # 0.01 is the viscosity, Re=1/\nu=100 in this case
     return dy_t + y * dy_x - 0.01 / np.pi * dy_xx
 
+
 #define the spatial domain for PDE
 geom = dde.geometry.Interval(-1, 1)
 #define the time domain for PDE
 timedomain = dde.geometry.TimeDomain(0, 0.99)
 #generate the whole domain for PDE
 geomtime = dde.geometry.GeometryXTime(geom, timedomain)
+
 
 # generater the boundary condition and initial condition
 bc = dde.DirichletBC(geomtime, lambda x: 0, lambda _, on_boundary: on_boundary)
@@ -49,6 +53,7 @@ data = dde.data.TimePDE(
     geomtime, pde, [bc, ic], num_domain=2540, num_boundary=80, num_initial=160
 )
 
+
 #define the structure and hyperparameters of the neural network
 #input layer 2 neuron, 3 hidden layers with 20 neurons and 1 output layer with 1 neruon
 net = dde.maps.FNN([2] + [20] * 3 + [1], "tanh", "Glorot normal")
@@ -62,6 +67,7 @@ model.compile("L-BFGS")
 losshistory, train_state = model.train()
 dde.saveplot(losshistory, train_state, issave=True, isplot=True)
 
+
 #test data
 X, y_true = gen_testdata()
 y_pred = model.predict(X)
@@ -69,3 +75,6 @@ f = model.predict(X, operator=pde)
 print('Mean residual:', np.mean(np.absolute(f)))
 print('L2 relative error:', dde.metrics.l2_relative_error(y_true, y_pred))
 np.savetxt('test.dat', np.hstack((X, y_true, y_pred)))
+
+
+
